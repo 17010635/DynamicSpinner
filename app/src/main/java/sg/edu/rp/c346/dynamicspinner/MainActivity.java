@@ -58,13 +58,14 @@ public class MainActivity extends AppCompatActivity {
 //                    String[] strNumbers = getResources().getStringArray(R.array.even_numbers);
 //                    alNumbers.addAll(Arrays.asList(strNumbers));
 //                    //Bind the ArrayAdapter to the Spinner
-//                    spn2.setAdapter(aaNumbers);
+//
 //                } else {
 //                    String[] strNumbers = getResources().getStringArray(R.array.odd_numbers);
 //                    alNumbers.addAll(Arrays.asList(strNumbers));
 //                    //Bind the ArrayAdapter to the Spinner
-//                    spn2.setAdapter(aaNumbers);
+//
 //                }
+//                aaNumbers.notifyDataSetChanged();
 //            }
 //        });
 
@@ -76,19 +77,16 @@ public class MainActivity extends AppCompatActivity {
                         alNumbers.clear();
                         String[] strNumbers = getResources().getStringArray(R.array.even_numbers);
                         alNumbers.addAll(Arrays.asList(strNumbers));
-                        //Bind the ArrayAdapter to the Spinner
-                        spn2.setAdapter(aaNumbers);
                         spn2.setSelection(2);
                         break;
                     case 1:
                         alNumbers.clear();
                         String[] strNumber = getResources().getStringArray(R.array.odd_numbers);
                         alNumbers.addAll(Arrays.asList(strNumber));
-                        //Bind the ArrayAdapter to the Spinner
-                        spn2.setAdapter(aaNumbers);
                         spn2.setSelection(1);
                         break;
                 }
+                aaNumbers.notifyDataSetChanged();
             }
 
             @Override
